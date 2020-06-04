@@ -1,0 +1,62 @@
+/*
+ * File: media.css
+ * Project: wp-pvr-theme-template
+ * File Created: Thursday, 4th June 2020 12:59:53 pm
+ * Author: povverster (povverster@gmail.com)
+ * -----
+ * Last Modified: Thursday, 4th June 2020 1:04:57 pm
+ * Modified By: povverster (povverster@gmail.com>)
+ * -----
+ * Copyright 2020 - povverster
+ */
+
+/* width responsive */
+@media (max-width: 1919.98px) {
+}
+
+@media (max-width: 1599.98px) {
+}
+
+@media (max-width: 1439.98px) {
+}
+
+@media (max-width: 1365.98px) {
+}
+
+@media (max-width: 1199.98px) {
+}
+
+@media (max-width: 991.98px) {
+}
+
+@media (max-width: 767.98px) {
+}
+
+@media (max-width: 575.98px) {
+}
+
+@media (max-width: 479.98px) {
+}
+
+@media (max-width: 379.98px) {
+}
+
+@media (max-width: 319.98px) {
+}
+
+/* retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+}
+
+/* height responsive */
+@media (max-height: 799.98px) {
+}
+
+@media (max-height: 699.98px) {
+}
+
+@media (max-height: 599.98px) {
+}
+
+@media (max-height: 319.98px) {
+}

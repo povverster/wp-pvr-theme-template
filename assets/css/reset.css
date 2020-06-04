@@ -1,0 +1,267 @@
+/*
+ * File: reset.css
+ * Project: wp-pvr-theme-template
+ * File Created: Thursday, 4th June 2020 1:00:10 pm
+ * Author: povverster (povverster@gmail.com)
+ * -----
+ * Last Modified: Thursday, 4th June 2020 1:17:43 pm
+ * Modified By: povverster (povverster@gmail.com>)
+ * -----
+ * Copyright 2020 - povverster
+ */
+
+ body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #333333;
+}
+
+/* width */
+/* ::-webkit-scrollbar {
+  width: 4px;
+} */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+} */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #cccccc;
+} */
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+input,
+textarea,
+select {
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 20px;
+  padding: 0;
+}
+@media (max-width: 991.98px) {
+  p {
+    margin: 0 0 15px;
+  }
+}
+
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #31394d;
+}
+
+h1 {
+  margin: 0 0 25px;
+  font-size: 48px;
+}
+h2 {
+  margin: 0 0 20px;
+  font-size: 36px;
+}
+h3 {
+  margin: 0 0 15px;
+  font-size: 30px;
+}
+h4 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+h5 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+@media (max-width: 991.98px) {
+  h1 {
+    margin: 0 0 20px;
+    font-size: 42px;
+  }
+  h2 {
+    margin: 0 0 15px;
+    font-size: 30px;
+  }
+  h3 {
+    margin: 0 0 15px;
+    font-size: 22px;
+  }
+  h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+  }
+  h5 {
+    margin: 0 0 10px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 478.98px) {
+  h1 {
+    margin: 0 0 15px;
+  }
+  h2 {
+    margin: 0 0 12px;
+  }
+  h3 {
+    margin: 0 0 10px;
+  }
+  h4 {
+    margin: 0 0 8px;
+  }
+  h5 {
+    margin: 0 0 8px;
+  }
+}
+
+.clearfix {
+  clear: both;
+}
+
+.image-link {
+  font-size: 0;
+}
+
+.inp-link {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.button-link {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.button-link:hover {
+  opacity: 0.8;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  min-width: 200px;
+  padding: 15px 20px 13px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: #296acb;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 1;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn:disabled {
+  opacity: 0.5;
+}
+
+.btn--inv {
+  background: #29cb97;
+}
+
+.btn--cancel {
+  background: #f32f2f;
+}
+
+.btn--file {
+  position: relative;
+  justify-content: flex-start;
+  padding: 15px 105px 13px 15px;
+  background: #ffffff;
+  font-weight: 400;
+  font-size: 16px;
+  color: #333333;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: default;
+}
+.btn--file:hover {
+  opacity: 1;
+}
+
+@media (max-width: 1199.98px) {
+  .btn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .btn {
+    min-width: 170px;
+    padding: 15px 12px 13px;
+  }
+}
+
+.close {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+.close:hover {
+  opacity: 0.9;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 9px;
+  content: " ";
+  height: 20px;
+  width: 2px;
+  background-color: #ffffff;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
