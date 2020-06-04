@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Thursday, 4th June 2020 6:17:46 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -24,11 +24,32 @@ add_action('admin_menu', function () {
   $post_name = !empty($post->post_name) ? $post->post_name : false;
 
   add_meta_box('page_options', 'Page options', 'page_options', ['page'], 'normal', 'high');
+  add_meta_box('page_gallery_options', 'Page gallery options', 'page_gallery_options', ['cp_page_gallery'], 'normal', 'high');
 });
 
 function page_options($post)
 {
   wp_nonce_field(basename(__FILE__), 'options_metabox_nonce');
+}
+
+function page_gallery_options($post)
+{
+  wp_nonce_field(basename(__FILE__), 'options_metabox_nonce');
+
+  $cp_page_gallery_slug = get_post_meta($post->ID, 'cp_page_gallery_slug', true);
+?>
+
+  <div class="inside">
+    <div>
+      <label for="cp_page_gallery_slug"><strong>Gallery slug:</strong></label>
+    </div>
+
+    <div>
+      <input id="cp_page_gallery_slug" type="text" name="cp_page_gallery_slug" style="width: 100%;" maxlength="128" value="<?php echo $cp_page_gallery_slug; ?>" />
+    </div>
+  </div>
+
+<?php
 }
 
 add_action('save_post', function ($post_id) {
@@ -49,6 +70,11 @@ add_action('save_post', function ($post_id) {
   $post = get_post($post_id);
   $post_type = !empty($post->post_type) ? $post->post_type : false;
   $post_name = !empty($post->post_name) ? $post->post_name : false;
+
+  if ($post_type === 'cp_page_gallery') {
+    $cp_page_gallery_slug = $_POST['cp_page_gallery_slug'] ?? '';
+    update_post_meta($post_id, 'cp_page_gallery_slug', sanitize_text_field($cp_page_gallery_slug));
+  }
 
   return $post_id;
 });
