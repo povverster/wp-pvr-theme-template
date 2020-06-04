@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 3:45:23 pm
+ * Last Modified: Thursday, 4th June 2020 4:06:14 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -110,6 +110,7 @@ function hide_slug_options()
 }
 
 require_once get_stylesheet_directory() . '/inc/cache-control.php';
+require_once get_stylesheet_directory() . '/inc/posts-deleting.php';
 require_once get_stylesheet_directory() . '/inc/enqueue-scripts.php';
 require_once get_stylesheet_directory() . '/inc/custom-posts.php';
 
