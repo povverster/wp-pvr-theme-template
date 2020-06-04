@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Thursday, 4th June 2020 4:40:38 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -20,6 +20,12 @@ $main_logo_image = null;
 if (!empty(get_option('main_logo_image'))) {
   $main_logo_image = get_site_url() . get_option('main_logo_image');
 }
+
+$og_url = get_option('og_url');
+$og_type = get_option('og_type');
+$og_title = get_option('og_title');
+$og_descr = get_option('og_descr');
+$og_image = get_option('og_image');
 
 $recaptcha_public = get_option('recaptcha_public');
 ?>
@@ -42,24 +48,27 @@ $recaptcha_public = get_option('recaptcha_public');
 
   <link rel="icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico" />
 
-  <?php if (get_option('og_url')) { ?>
-    <meta property="og:url" content="<?php echo get_option('og_url'); ?>" />
+  <?php if ($og_url) { ?>
+    <meta property="og:url" content="<?php echo $og_url; ?>" />
   <?php } ?>
 
-  <?php if (get_option('og_type')) { ?>
-    <meta property="og:type" content="<?php echo get_option('og_type'); ?>" />
+  <?php if ($og_type) { ?>
+    <meta property="og:type" content="<?php echo $og_type; ?>" />
   <?php } ?>
 
-  <meta property="og:title" content="<?php echo empty(get_option('og_title')) ? '' : get_option('og_title'); ?>" />
-  <meta property="og:description" content="<?php echo empty(get_option('og_descr')) ? ' ' : get_option('og_descr'); ?>" />
+  <meta property="og:title" content="<?php echo $og_title ? $og_title : ''; ?>" />
 
-  <?php if (get_option('og_image')) { ?>
-    <meta property="og:image" content="<?php echo get_site_url() . get_option('og_image'); ?>" />
+  <meta property="og:description" content="<?php echo $og_descr ? $og_descr : ' '; ?>" />
+
+  <?php if ($og_image) { ?>
+    <meta property="og:image" content="<?php echo get_site_url() . $og_image; ?>" />
   <?php } ?>
 
   <?php wp_head(); ?>
 
-  <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $recaptcha_public; ?>"></script>
+  <?php if ($recaptcha_public) { ?>
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $recaptcha_public; ?>"></script>
+  <?php } ?>
 </head>
 
 <body>
