@@ -4,10 +4,8 @@
  * File Created: Thursday, 4th June 2020 1:22:07 pm
  * Author: povverster (povverster@gmail.com)
  * -----
- * Last Modified: Thursday, 4th June 2020 1:49:52 pm
+ * Last Modified: Thursday, 4th June 2020 2:00:53 pm
  * Modified By: povverster (povverster@gmail.com>)
- * -----
- * Copyright 2020 - povverster
  */
 
 function showLoader() {

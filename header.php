@@ -5,10 +5,8 @@
  * File Created: Thursday, 4th June 2020 10:29:37 am
  * Author: povverster (povverster@gmail.com)
  * -----
- * Last Modified: Thursday, 4th June 2020 12:48:04 pm
+ * Last Modified: Thursday, 4th June 2020 2:00:53 pm
  * Modified By: povverster (povverster@gmail.com>)
- * -----
- * Copyright 2020 - povverster
  */
 
 declare(strict_types=1);
