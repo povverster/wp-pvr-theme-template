@@ -1,0 +1,13 @@
+# ignore node dependency directories
+node_modules/
+
+.vscode/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+log.txt
+
+.DS_Store
+.htaccess

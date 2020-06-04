@@ -1,0 +1,34 @@
+{
+  "useTabs": false,
+  "printWidth": 120,
+  "tabWidth": 2,
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": { "parser": "json" }
+    },
+    {
+      "files": "*.js",
+      "options": {
+        "singleQuote": true,
+        "trailingComma": "none",
+        "jsxBracketSameLine": false,
+        "semi": true
+      }
+    },
+    {
+      "files": ["*.html", "*.htm"],
+      "options": {
+        "tabWidth": 2,
+        "printWidth": 400
+      }
+    },
+    {
+      "files": ["*.css", "*.scss"],
+      "options": {
+        "tabWidth": 2,
+        "printWidth": 120
+      }
+    }
+  ]
+}
