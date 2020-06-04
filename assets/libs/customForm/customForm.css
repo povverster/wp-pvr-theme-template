@@ -1,0 +1,135 @@
+.ch_ch {
+  width: 16px;
+  height: 17px;
+  /* background: url(images/ch_ch.png) no-repeat; */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ch_unch {
+  width: 16px;
+  height: 17px;
+  /* background: url(images/ch_un.png) no-repeat; */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.radio_ch {
+  width: 16px;
+  height: 17px;
+  display: inline-block;
+  /* background: url(images/radio_ch.png) no-repeat; */
+}
+
+.radio_unch {
+  width: 16px;
+  height: 17px;
+  display: inline-block;
+  /* background: url(images/radio_un.png) no-repeat; */
+}
+/*select*/
+.customSelect {
+  position: relative;
+}
+
+.select {
+  position: relative;
+  height: 48px;
+  margin-bottom: 10px;
+}
+.s-hidden {
+  display: none;
+}
+
+.styledSelect {
+  color: #1f2e4c;
+  border: 1px solid #e3e3e3;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 8px 15px 7px 15px;
+  text-align: left;
+  overflow: hidden;
+  background: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+/* .styledSelect.disabled {
+  opacity: 0.5;
+} */
+
+.styledSelect .arr {
+  position: absolute;
+  width: 10px;
+  height: 8px;
+  top: 16px;
+  right: 8px;
+  display: inline-block;
+  background: transparent url(images/select_arr.svg) no-repeat 50% 50%;
+  background-size: contain;
+}
+.styledSelect.active .arr {
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+
+.options.active {
+  display: block;
+}
+.options {
+  display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  max-height: 250px;
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  color: black;
+  z-index: 1000;
+  margin: 0 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.options li {
+  margin: 0 0;
+  padding: 0 10px;
+  line-height: 30px;
+  color: black;
+  cursor: pointer;
+}
+.options li:hover {
+  background-color: #ececec;
+}
+.options li.selected {
+  background-color: #ececec;
+}
+/*end select*/
+/*file*/
+.customInputFileWrap {
+  margin-bottom: 6px;
+}
+
+.customInputFileWrap:last-child {
+  margin-bottom: 26px;
+}
+
+.customInputFile {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 7px 10px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.customInputSignature {
+  display: inline-block;
+  vertical-align: middle;
+  color: #828282;
+  font-size: 12px;
+  margin-left: 10px;
+}

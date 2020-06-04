@@ -1,0 +1,64 @@
+.fe_errors {
+  color: #344e9c;
+  font-size: 0.8em;
+  padding: 15px 0;
+}
+
+#fe_modal .fe_errors {
+  color: #344e9c;
+  font-size: 1em;
+  line-height: 1.8;
+  padding: 20px;
+}
+
+.fe_error_message {
+  color: #344e9c;
+  font-size: 0.6em;
+  line-height: 1.2;
+  margin-top: 5px;
+}
+
+/* .fe_suc {
+  border: 1px solid green;
+}
+
+.fe_error {
+  border: 1px solid #344e9c;
+} */
+
+.fe_wrap {
+  display: inline-block;
+  position: relative;
+}
+
+.modal-dialog {
+  max-width: 500px;
+}
+
+.modal-content {
+  border-radius: 0;
+  font-size: 0.9em;
+}
+
+.close {
+  margin-right: 5px;
+}
+
+.modal-dialog {
+  margin-top: 100px;
+}
+
+.fltooltip-inner,
+.fltooltip.top > .fltooltip-arrow {
+  display: none;
+}
+
+.fe_error + .fltooltip.top > .fltooltip-inner {
+  /* background-color: #344e9c; */
+  display: block;
+}
+
+.fe_error + .fltooltip.top > .fltooltip-arrow {
+  /* border-top-color: #344e9c; */
+  display: block;
+}
