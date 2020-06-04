@@ -1,3 +1,15 @@
+/*
+ * File: lazyload.js
+ * Project: wp-pvr-theme-template
+ * File Created: Thursday, 4th June 2020 1:23:46 pm
+ * Author: povverster (povverster@gmail.com)
+ * -----
+ * Last Modified: Thursday, 4th June 2020 1:50:05 pm
+ * Modified By: povverster (povverster@gmail.com>)
+ * -----
+ * Copyright 2020 - povverster
+ */
+
 jQuery(document).ready(function($) {
   var LazyLoad = function() {
     this.init();

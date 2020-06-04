@@ -1,3 +1,15 @@
+/*
+ * File: common.js
+ * Project: wp-pvr-theme-template
+ * File Created: Thursday, 4th June 2020 1:21:44 pm
+ * Author: povverster (povverster@gmail.com)
+ * -----
+ * Last Modified: Thursday, 4th June 2020 1:49:38 pm
+ * Modified By: povverster (povverster@gmail.com>)
+ * -----
+ * Copyright 2020 - povverster
+ */
+
 function getURLParameters(paramName) {
   var sURL = window.document.URL.toString();
   if (sURL.indexOf('?') > 0) {
