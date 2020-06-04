@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Thursday, 4th June 2020 3:45:23 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -113,6 +113,7 @@ require_once get_stylesheet_directory() . '/inc/cache-control.php';
 require_once get_stylesheet_directory() . '/inc/enqueue-scripts.php';
 require_once get_stylesheet_directory() . '/inc/custom-posts.php';
 
+require_once get_stylesheet_directory() . '/theme-menus/common.php';
 require_once get_stylesheet_directory() . '/theme-functions/common.php';
 
 require_once get_stylesheet_directory() . '/inc/wp-cron.php';
