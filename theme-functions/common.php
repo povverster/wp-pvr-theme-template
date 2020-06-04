@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Thursday, 4th June 2020 4:30:31 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -18,5 +18,5 @@ if (!defined('ABSPATH')) {
 
 function theme_template(string $category, string $name)
 {
-  locate_template("theme-templates/$category/$name.php", true);
+  locate_template("theme-templates/$category/$name.php", true, false);
 }
