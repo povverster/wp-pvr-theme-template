@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 4:05:42 pm
+ * Last Modified: Friday, 5th June 2020 2:11:20 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -32,14 +32,9 @@ function trash_post($post_id)
 // --------------------
 
 // disable pages deleting
-function restrict_page_deletion(int $post_id)
+function restrict_page_deletion($post_id)
 {
   global $static_slugs;
-
-  if (empty($static_slugs) || !is_index($post_id)) {
-    echo 'Wrong pahe deleting.';
-    die();
-  }
 
   foreach ($static_slugs as $slug) {
     $cur_page = get_page_by_path($slug);
