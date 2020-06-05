@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 6:17:46 pm
+ * Last Modified: Friday, 5th June 2020 11:04:06 am
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -17,11 +17,15 @@ if (!defined('ABSPATH')) {
 }
 
 add_action('admin_menu', function () {
-  $post_id = !empty($_GET['post']) && is_numeric($_GET['post']) ? $_GET['post'] : NULL;
+  $post_id = !empty($_GET['post']) && is_index($_GET['post']) ? $_GET['post'] : null;
+
+  if (empty($post_id)) {
+    return false;
+  }
 
   $post = get_post($post_id);
-  $post_type = !empty($post->post_type) ? $post->post_type : false;
-  $post_name = !empty($post->post_name) ? $post->post_name : false;
+  $post_type = $post->post_type ?? '';
+  $post_name = $post->post_name ?? '';
 
   add_meta_box('page_options', 'Page options', 'page_options', ['page'], 'normal', 'high');
   add_meta_box('page_gallery_options', 'Page gallery options', 'page_gallery_options', ['cp_page_gallery'], 'normal', 'high');
@@ -68,8 +72,8 @@ add_action('save_post', function ($post_id) {
   }
 
   $post = get_post($post_id);
-  $post_type = !empty($post->post_type) ? $post->post_type : false;
-  $post_name = !empty($post->post_name) ? $post->post_name : false;
+  $post_type = $post->post_type ?? '';
+  $post_name = $post->post_name ?? '';
 
   if ($post_type === 'cp_page_gallery') {
     $cp_page_gallery_slug = $_POST['cp_page_gallery_slug'] ?? '';
