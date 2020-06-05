@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Friday, 5th June 2020 11:56:11 am
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -19,4 +19,8 @@ if (!defined('ABSPATH')) {
 /* Static files versions */
 if (!defined('FVER')) {
   define('FVER', '1.0.0');
+}
+
+if (!defined('RECAPTCHA_SCORE_LEVEL')) {
+  define('RECAPTCHA_SCORE_LEVEL', 0.5);
 }
