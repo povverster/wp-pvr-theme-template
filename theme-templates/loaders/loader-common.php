@@ -1,12 +1,12 @@
 <?php
 /*
- * File: sidebar-loader.php
+ * File: loader-common.php
  * Project: wp-pvr-theme-template
- * File Created: Thursday, 4th June 2020 1:58:41 pm
+ * File Created: Friday, 5th June 2020 11:44:45 am
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Friday, 5th June 2020 11:45:04 am
  * Modified By: povverster (povverster@gmail.com>)
  */
 

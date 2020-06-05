@@ -5,6 +5,24 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Friday, 5th June 2020 11:46:20 am
  * Modified By: povverster (povverster@gmail.com>)
  */
+
+/* ---------------- LOADER ----------------- */
+#loader {
+  position: fixed;
+  z-index: 13;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#loader img {
+  position: absolute;
+  top: 45%;
+  left: 46%;
+  top: calc(50% - 72px);
+  left: calc(50% - 46px);
+}
+/* ------------------------------------------ */
