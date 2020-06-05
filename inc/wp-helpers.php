@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Friday, 5th June 2020 10:44:18 am
+ * Last Modified: Friday, 5th June 2020 2:04:31 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -188,15 +188,18 @@ function get_current_role_name()
 
 function send_html_email(
   array $to,
-  string $from,
+  string $from = '',
   string $subject,
   string $message,
   array $attachments = []
 ): bool {
   $headers = [
-    'From: Me Myself <' . $from . '>',
     'content-type: text/html'
   ];
+
+  if (is_email($from)) {
+    $headers[] = 'From: <' . $from . '>';
+  }
 
   return wp_mail($to, $subject, $message, $headers, $attachments);
 }
