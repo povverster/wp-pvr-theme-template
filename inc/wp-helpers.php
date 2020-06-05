@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Friday, 5th June 2020 10:44:18 am
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
   exit;
 }
 
-function get_responsive_thumbnails(int $post_id, string $default_image = null): array
+function get_responsive_thumbnails(int $post_id, string $default_image = null, bool $improve_mobile = true): array
 {
   if (empty($post_id) || !is_numeric(($post_id))) {
     return [];
@@ -78,6 +78,11 @@ function get_responsive_thumbnails(int $post_id, string $default_image = null): 
     return [];
   }
 
+  $sizes = "$retina, $desktop 1980, $laptop 1200, $smartphone 900, $mobile 700, $mobile_m 576, $mobile_s 480, $mobile_xs 380";
+  if ($improve_mobile) {
+    $sizes = "$retina, $desktop 1980, $laptop 1200, $smartphone 900, $mobile 700";
+  }
+
   return [
     'retina' => $retina,
     'desktop' => $desktop,
@@ -87,13 +92,13 @@ function get_responsive_thumbnails(int $post_id, string $default_image = null): 
     'mobile_m' => $mobile_m,
     'mobile_s' => $mobile_s,
     'mobile_xs' => $mobile_xs,
-    'sizes' => "$retina, $desktop 1980, $laptop 1200, $smartphone 900, $mobile 700, $mobile_m 576, $mobile_s 480, $mobile_xs 380",
+    'sizes' => $sizes,
     'src' => $mobile_xs,
     'thumb_title' => $thumb_title
   ];
 }
 
-function get_responsive_attachment(int $attachment_id): array
+function get_responsive_attachment(int $attachment_id, bool $improve_mobile = true): array
 {
   if (empty($attachment_id) || !is_numeric(($attachment_id))) {
     return [];
@@ -121,6 +126,11 @@ function get_responsive_attachment(int $attachment_id): array
     return [];
   }
 
+  $sizes = "$retina, $desktop 1980, $laptop 1200, $smartphone 900, $mobile 700, $mobile_m 576, $mobile_s 480, $mobile_xs 380";
+  if ($improve_mobile) {
+    $sizes = "$retina, $desktop 1980, $laptop 1200, $smartphone 900, $mobile 700";
+  }
+
   return [
     'retina' => $retina,
     'desktop' => $desktop,
@@ -130,7 +140,7 @@ function get_responsive_attachment(int $attachment_id): array
     'mobile_m' => $mobile_m,
     'mobile_s' => $mobile_s,
     'mobile_xs' => $mobile_xs,
-    'sizes' => "$retina, $desktop 1980, $laptop 1200, $smartphone 900, $mobile 700, $mobile_m 576, $mobile_s 480, $mobile_xs 380",
+    'sizes' => $sizes,
     'src' => $mobile_xs
   ];
 }
