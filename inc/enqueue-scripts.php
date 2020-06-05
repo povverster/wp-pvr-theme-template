@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Friday, 5th June 2020 1:18:15 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -19,6 +19,8 @@ if (!defined('ABSPATH')) {
 add_action('wp_enqueue_scripts', function () {
   $page_id = get_the_ID();
   $page = get_post($page_id);
+
+  $recaptcha_public = get_option('recaptcha_public');
 
   wp_deregister_style('flui');
   wp_deregister_style('customForm');
@@ -77,6 +79,14 @@ add_action('wp_enqueue_scripts', function () {
     'stylesheetUrl',
     get_stylesheet_directory_uri()
   );
+
+  if ($recaptcha_public) {
+    wp_localize_script(
+      'common',
+      'recaptchaPublic',
+      "$recaptcha_public"
+    );
+  }
 
   wp_localize_script(
     'common',
