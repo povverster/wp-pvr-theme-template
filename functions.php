@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 4:06:14 pm
+ * Last Modified: Friday, 5th June 2020 1:25:34 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -113,6 +113,7 @@ require_once get_stylesheet_directory() . '/inc/cache-control.php';
 require_once get_stylesheet_directory() . '/inc/posts-deleting.php';
 require_once get_stylesheet_directory() . '/inc/enqueue-scripts.php';
 require_once get_stylesheet_directory() . '/inc/custom-posts.php';
+require_once get_stylesheet_directory() . '/inc/verify-google-recaptcha.php';
 
 require_once get_stylesheet_directory() . '/theme-menus/common.php';
 require_once get_stylesheet_directory() . '/theme-functions/common.php';
