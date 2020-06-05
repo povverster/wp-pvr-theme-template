@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Friday, 5th June 2020 10:22:04 am
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -23,23 +23,23 @@ if (wp_doing_ajax()) {
   {
     check_ajax_referer('pvr_nonce', 'nonce_code');
 
-    if (empty($_POST['og_image'])) {
+    if (empty($_POST['og_image']) || !is_string($_POST['og_image'])) {
       header400();
+      header_json();
       echo json_encode(['code' => 'wrong_removing', 'message' => 'Wrong post']);
       die();
     }
 
     $filepath = rtrim(ABSPATH, '/') . '/' . ltrim($_POST['og_image'], '/');
-    if (!file_exists($filepath)) {
-      header400();
-      echo json_encode(['code' => 'wrong_removing', 'message' => 'File not found']);
-      die();
+    if (is_file($filepath)) {
+      unlink($filepath);
     }
 
     unlink($filepath);
     delete_option('og_image');
 
     header200();
+    header_json();
     echo json_encode(['status' => 'success']);
     die();
   }
@@ -50,23 +50,23 @@ if (wp_doing_ajax()) {
   {
     check_ajax_referer('pvr_nonce', 'nonce_code');
 
-    if (empty($_POST['main_logo_image'])) {
+    if (empty($_POST['main_logo_image']) || !is_string($_POST['main_logo_image'])) {
       header400();
+      header_json();
       echo json_encode(['code' => 'wrong_removing', 'message' => 'Wrong post']);
       die();
     }
 
     $filepath = rtrim(ABSPATH, '/') . '/' . ltrim($_POST['main_logo_image'], '/');
-    if (!file_exists($filepath)) {
-      header400();
-      echo json_encode(['code' => 'wrong_removing', 'message' => 'File not found']);
-      die();
+    if (is_file($filepath)) {
+      unlink($filepath);
     }
 
     unlink($filepath);
     delete_option('main_logo_image');
 
     header200();
+    header_json();
     echo json_encode(['status' => 'success']);
     die();
   }
@@ -77,23 +77,23 @@ if (wp_doing_ajax()) {
   {
     check_ajax_referer('pvr_nonce', 'nonce_code');
 
-    if (empty($_POST['footer_logo_image'])) {
+    if (empty($_POST['footer_logo_image']) || !is_string($_POST['footer_logo_image'])) {
       header400();
+      header_json();
       echo json_encode(['code' => 'wrong_removing', 'message' => 'Wrong post']);
       die();
     }
 
     $filepath = rtrim(ABSPATH, '/') . '/' . ltrim($_POST['footer_logo_image'], '/');
-    if (!file_exists($filepath)) {
-      header400();
-      echo json_encode(['code' => 'wrong_removing', 'message' => 'File not found']);
-      die();
+    if (is_file($filepath)) {
+      unlink($filepath);
     }
 
     unlink($filepath);
     delete_option('footer_logo_image');
 
     header200();
+    header_json();
     echo json_encode(['status' => 'success']);
     die();
   }
