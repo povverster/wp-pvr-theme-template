@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Friday, 5th June 2020 2:11:20 pm
+ * Last Modified: Friday, 5th June 2020 2:12:17 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -36,12 +36,14 @@ function restrict_page_deletion($post_id)
 {
   global $static_slugs;
 
-  foreach ($static_slugs as $slug) {
-    $cur_page = get_page_by_path($slug);
-    if (!empty($cur_page->ID)) {
-      if ($post_id === $cur_page->ID) {
-        echo 'You are not authorized to delete this page.';
-        die();
+  if (!empty($static_slugs) && is_array($static_slugs)) {
+    foreach ($static_slugs as $slug) {
+      $cur_page = get_page_by_path($slug);
+      if (!empty($cur_page->ID)) {
+        if ($post_id === $cur_page->ID) {
+          echo 'You are not authorized to delete this page.';
+          die();
+        }
       }
     }
   }
