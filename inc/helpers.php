@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 2:48:25 pm
+ * Last Modified: Tuesday, 16th June 2020 12:08:32 pm
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -208,6 +208,23 @@ function random_str(
     $str .= $keyspace[random_int(0, $max)];
   }
   return $str;
+}
+
+if (!function_exists('mb_string_to_array')) {
+  function mb_string_to_array(string $string, string $charset = 'UTF-8'): array
+  {
+    $strlen = mb_strlen($string);
+
+    $array = [];
+
+    while ($strlen) {
+      $array[] = mb_substr($string, 0, 1, $charset);
+      $string = mb_substr($string, 1, $strlen, $charset);
+      $strlen = mb_strlen($string);
+    }
+
+    return $array;
+  }
 }
 
 if (!function_exists('get_current_page_url')) {
