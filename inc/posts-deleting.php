@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Friday, 5th June 2020 2:12:17 pm
+ * Last Modified: Tuesday, 16th June 2020 10:51:34 am
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -34,10 +34,8 @@ function trash_post($post_id)
 // disable pages deleting
 function restrict_page_deletion($post_id)
 {
-  global $static_slugs;
-
-  if (!empty($static_slugs) && is_array($static_slugs)) {
-    foreach ($static_slugs as $slug) {
+  if (!empty(STATIC_SLUGS) && is_array(STATIC_SLUGS)) {
+    foreach (STATIC_SLUGS as $slug) {
       $cur_page = get_page_by_path($slug);
       if (!empty($cur_page->ID)) {
         if ($post_id === $cur_page->ID) {

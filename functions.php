@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Friday, 5th June 2020 1:25:34 pm
+ * Last Modified: Tuesday, 16th June 2020 10:50:50 am
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -33,10 +33,6 @@ if (!empty($_SERVER['HTTP_ACCEPT'])) {
 if (!defined('WEBP_SUPPORT')) {
   define('WEBP_SUPPORT', $webp_support);
 }
-
-$static_slugs = [
-  'home'
-];
 
 // Disable adminbar for all
 add_filter('show_admin_bar', '__return_false');
@@ -95,12 +91,11 @@ function hide_slug_options()
 {
   global $post;
   global $pagenow;
-  global $static_slugs;
 
   $hide_slugs = "<style type=\"text/css\">.editor-post-link, .edit-post-post-status { display: none !important; }</style>\n";
 
   if (is_admin() && !empty($post->post_name) && ($pagenow == 'post-new.php' || $pagenow == 'post.php')) {
-    foreach ($static_slugs as $slug) {
+    foreach (STATIC_SLUGS as $slug) {
       $slug_parts = explode('/', $slug);
       if ($post->post_name === end($slug_parts)) {
         print($hide_slugs);

@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Friday, 5th June 2020 11:56:11 am
+ * Last Modified: Tuesday, 16th June 2020 10:50:11 am
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -19,6 +19,12 @@ if (!defined('ABSPATH')) {
 /* Static files versions */
 if (!defined('FVER')) {
   define('FVER', '1.0.0');
+}
+
+if (!defined('STATIC_SLUGS')) {
+  define('STATIC_SLUGS', [
+    'home'
+  ]);
 }
 
 if (!defined('RECAPTCHA_SCORE_LEVEL')) {
