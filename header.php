@@ -6,7 +6,7 @@
  * Author: povverster (povverster@gmail.com)
  * GitHub: https://github.com/povverster
  * -----
- * Last Modified: Thursday, 4th June 2020 4:40:38 pm
+ * Last Modified: Friday, 10th July 2020 11:04:25 am
  * Modified By: povverster (povverster@gmail.com>)
  */
 
@@ -28,6 +28,10 @@ $og_descr = get_option('og_descr');
 $og_image = get_option('og_image');
 
 $recaptcha_public = get_option('recaptcha_public');
+
+if (defined('WP_DEBUG') && WP_DEBUG) {
+  header('X-Robots-Tag: noindex, nofollow', true);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,6 +40,16 @@ $recaptcha_public = get_option('recaptcha_public');
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <?php
+  if (defined('WP_DEBUG') && WP_DEBUG) {
+  ?>
+
+    <meta name="robots" content="noindex, nofollow">
+
+  <?php
+  }
+  ?>
 
   <title>
     <?php
